@@ -11,6 +11,8 @@ async def help_command(message: Message, command: CommandObject) -> Message:
                 return await message.answer(
                     f'{cmd[0]} - {cmd[1]}\n\n{cmd[2]}'
                 )
+            else:
+                return await message.answer("Command not found")
     else:
         return await message.answer(
             'Help with bot\n'
