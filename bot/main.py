@@ -6,7 +6,8 @@ from aiogram import Dispatcher, Bot
 from aiogram.types import BotCommand
 from dotenv import load_dotenv
 
-from commands import register_user_cmds, bot_commands
+from commands import register_user_cmds
+from commands.bot_commands import bot_commands_tuple
 
 load_dotenv()
 
@@ -14,7 +15,7 @@ load_dotenv()
 async def main() -> None:
     logging.basicConfig(level=logging.DEBUG)
     bot_commands_list = []
-    for cmd in bot_commands:
+    for cmd in bot_commands_tuple:
         bot_commands_list.append(BotCommand(
             command=cmd[0],
             description=cmd[1]))
